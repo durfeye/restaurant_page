@@ -1,3 +1,6 @@
+* {
+    /* border: 1px solid black; */
+}
 html, body {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +20,6 @@ body {
 }
 .nav {
     height: 10vh;
-    background: black;
 }
 .menu {
     margin: 0;
@@ -27,17 +29,18 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 5vh;
-    font-weight: bold;
+    
+    
     background: #FFB133;
 }
-li {
+button {
     color: white;
     text-shadow: 3px 3px #919191;
     cursor: pointer;
-}
-a {
-    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 5vh;
+    font-weight: bold;
 }
 .menuOption1::before {
     content: 'Home';
@@ -49,11 +52,14 @@ a {
     content: 'Contact';
 }
 .topInfo {
-    height: 30.5vh;
+    height: 29.5vh;
 }
 .topInfoHeading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding-top: 5vh;
+    margin-top: 4vh;
     color: black;
     font-size: 5vh;
     text-align: center;
@@ -61,7 +67,6 @@ a {
 .topInfoContent {
     color: black;
     text-align: center;
-    margin-top: 4vh;
     padding: 4vh;
     background: #FFCA85;
     font-weight: bold;
@@ -69,7 +74,6 @@ a {
 }
 .bottomInfo {
     height: 45vh;
-    padding-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,4 +88,102 @@ a {
 }
 .chefPhotoDesc {
     font-size: 2vh;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100vh;
+    position: absolute;
+    bottom: 0;
+    background: #FFB133;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px #919191;
+    font-size: 3vh;
+}
+.frontContent {
+    height: 80vh;
+}
+.menuItems {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vh;
+}
+.menuItemBox {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    gap: 3vh;
+    padding: 1vh;
+}
+.menuItemAbout {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+}
+.menuItems .menuItemName,.menuItemPrice {
+    margin: 0;
+    padding: 0;
+}
+.menuImg {
+    height: 15vh;
+    width: 15vh;
+}
+.menuItemName {
+    height: 5vh;
+}
+.menuItemPrice {
+    height: 5vh;
+}
+.menuItem1 .menuImg {
+    background: url(hamburger.jpg);
+    background-size: 15vh;
+    background-repeat: no-repeat;
+}
+.menuItem1 .menuItemName::before {
+    content: 'Hamburger'
+}
+.menuItem1 .menuItemPrice::before {
+    content: '10$'
+}
+
+.menuItem2 .menuImg {
+    background: url(cheeseburger.jpg);
+    background-size: 15vh;
+    background-repeat: no-repeat;
+}
+.menuItem2 .menuItemName::before {
+    content: 'Cheeseburger'
+}
+.menuItem2 .menuItemPrice::before {
+    content: '15$'
+}
+
+.menuItem3 .menuImg {
+    background: url(spicyburger.png);
+    background-size: 15vh;
+    background-repeat: no-repeat;
+}
+.menuItem3 .menuItemName::before {
+    content: 'Spicyburger'
+}
+.menuItem3 .menuItemPrice::before {
+    content: '20$'
+}
+
+.menuItem4 .menuImg {
+    background: url(vegeburger.jpeg);
+    background-size: 15vh;
+    background-repeat: no-repeat;
+}
+.menuItem4 .menuItemName::before {
+    content: 'Vegeburger'
+}
+.menuItem4 .menuItemPrice::before {
+    content: '25$'
 }

@@ -1,14 +1,29 @@
 import './style.css';
 import backgroundsrc from './background.jpg';
 import chefsrc from './chef.jpg';
+import hamburgersrc from './hamburger.jpg';
+import cheeseburgersrc from './cheeseburger.jpg';
+import spicyburgersrc from './spicyburger.png';
+import vegeburgersrc from './vegeburger.jpeg';
 
-// declaring background of page
+// declaring images
 const backgroundImg = new Image();
 backgroundImg.src = backgroundsrc;
 
-// chef fronpage photo
 const chefImg = new Image();
 chefImg.src = chefsrc;
+
+const hamburgerImg = new Image();
+hamburgerImg.src = hamburgersrc;
+
+const cheeseburgerImg = new Image();
+cheeseburgerImg.src = cheeseburgersrc;
+
+const spicyburgerImg = new Image();
+spicyburgerImg.src = spicyburgersrc;
+
+const vegeburgerImg = new Image();
+vegeburgerImg.src = vegeburgersrc;
 
 let content = document.querySelector('#content');
 
@@ -22,25 +37,29 @@ const makingNav = (() => {
     //making nav elements
     let logo = document.createElement('div');
     logo.classList.add('logo');
-    let menu = document.createElement('ul');
+    let menu = document.createElement('div');
     menu.classList.add('menu');
     for (let i = 0; i < 3; i++) {
-        let menuOption = document.createElement('li');
-        let menuLink = document.createElement('a');
+        let menuOption = document.createElement('button');
         menuOption.classList.add('menuOption' + (i + 1));
-        menuLink.appendChild(menuOption);
-        menuLink.href = '#';
-        menu.appendChild(menuLink);
+        menu.appendChild(menuOption);
     }
     nav.appendChild(logo);
     nav.appendChild(menu);
 })();
 
+//making front content
+let frontContent = document.createElement('div');
+frontContent.classList.add('frontContent')
+content.appendChild(frontContent);
+
+//making front page
 const makingFrontContent = (() => {
+
     //making topInfo
     let topInfo = document.createElement('section');
     topInfo.classList.add('topInfo');
-    content.appendChild(topInfo);
+    frontContent.appendChild(topInfo);
 
     //topInfo Heading
     let topInfoHeading = document.createElement('h1');
@@ -54,11 +73,11 @@ const makingFrontContent = (() => {
     topInfoContent.textContent =
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed dignissim enim. Nunc a rutrum lacus.'
     topInfo.appendChild(topInfoContent);
-    
+
     //making bottomInfo
     let bottomInfo = document.createElement('section');
     bottomInfo.classList.add('bottomInfo');
-    content.appendChild(bottomInfo);
+    frontContent.appendChild(bottomInfo);
 
     //add chef photo with desc
     let chefPhoto = document.createElement('div');
@@ -68,12 +87,67 @@ const makingFrontContent = (() => {
     chefPhotoDesc.classList.add('chefPhotoDesc');
     chefPhotoDesc.textContent = 'Our cheffe - Marco Polo.'
     bottomInfo.appendChild(chefPhotoDesc);
-
 })();
 
 
 
-//making front page
+const makingMenuContent = (() => {
+    //wiping front content
+    frontContent.innerHTML = '';
+    //making menu options
+    for (let i = 0; i < 4; i++) {
+        let menuItem = document.createElement('div');
+        menuItem.classList.add('menuItem' + (i + 1), 'menuItems');
+        frontContent.appendChild(menuItem);
+
+        let menuItemBox = document.createElement('div');
+        menuItemBox.classList.add('menuItemBox');
+        menuItem.appendChild(menuItemBox);
+
+        let menuImg = document.createElement('div');
+        menuImg.classList.add('menuImg');
+        menuItemBox.appendChild(menuImg);
+
+        let menuItemAbout = document.createElement('div');
+        menuItemAbout.classList.add('menuItemAbout');
+        menuItemBox.appendChild(menuItemAbout);
+
+
+        let menuItemName = document.createElement('h2');
+        menuItemName.classList.add('menuItemName');
+        menuItemAbout.appendChild(menuItemName);
+
+        let menuItemPrice = document.createElement('p');
+        menuItemPrice.classList.add('menuItemPrice');
+        menuItemAbout.appendChild(menuItemPrice);
+    }
+});
+
+const makingContactContent = (() => {
+    alert('NOO')
+});
 
 
 //making footer
+const makingFooter = (() => {
+    let footer = document.createElement('footer');
+    footer.classList.add('footer');
+    content.appendChild(footer);
+    footer.textContent = 'by Durfy';
+})();
+
+//getting all buttons
+let menuOptions = document.querySelectorAll('button');
+
+//switching tabes
+menuOptions.forEach(menuOptione => {
+    if (menuOptione.classList == 'menuOption1') {
+        menuOptione.addEventListener('click', makingFrontContent)
+    }
+    else if (menuOptione.classList == 'menuOption2') {
+        menuOptione.addEventListener('click', makingMenuContent)
+    }
+    else if (menuOptione.classList == 'menuOption3') {
+        menuOptione.addEventListener('click', makingContactContent)
+    }
+});
