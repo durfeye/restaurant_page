@@ -55,6 +55,8 @@ content.appendChild(frontContent);
 
 //making front page
 const makingFrontContent = (() => {
+    //wiping front content
+    frontContent.innerHTML = '';
 
     //making topInfo
     let topInfo = document.createElement('section');
@@ -87,8 +89,9 @@ const makingFrontContent = (() => {
     chefPhotoDesc.classList.add('chefPhotoDesc');
     chefPhotoDesc.textContent = 'Our cheffe - Marco Polo.'
     bottomInfo.appendChild(chefPhotoDesc);
-})();
+});
 
+makingFrontContent();
 
 
 const makingMenuContent = (() => {
