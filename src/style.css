@@ -19,6 +19,9 @@ body {
     width: 100vh;
     height: 100%;
 }
+/* .frontContent {
+    height: 100%;
+} */
 .nav {
     height: 10vh;
     width: 100%;
@@ -185,7 +188,7 @@ footer {
     content: '25$'
 }
 .contactInfo {
-    height: 50%;
+    height: 40vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -194,7 +197,7 @@ footer {
     gap: 2vh;
 }
 .openingHours {
-    height: 50%;
+    height: 40vh;
     width: 100%;;
     border: 0;
 }
