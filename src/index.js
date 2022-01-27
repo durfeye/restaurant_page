@@ -93,7 +93,6 @@ const makingFrontContent = (() => {
 
 makingFrontContent();
 
-
 const makingMenuContent = (() => {
     //wiping front content
     frontContent.innerHTML = '';
@@ -127,7 +126,25 @@ const makingMenuContent = (() => {
 });
 
 const makingContactContent = (() => {
-    alert('NOO')
+    frontContent.innerHTML = '';
+
+    let contactInfo = document.createElement('div');
+    contactInfo.classList.add('contactInfo');
+    frontContent.appendChild(contactInfo);
+
+    for (let i = 0; i < 3; i++) {
+        let contactItem = document.createElement('p')
+        contactItem.classList.add('contactItem' + (i+1), 'contactItem');
+        contactInfo.appendChild(contactItem);
+    }
+
+
+    let openingHours = document.createElement('iframe');
+    openingHours.classList.add('openingHours');
+    openingHours.src = 'https://www.google.com/maps/embed?pb=!…'
+    frontContent.appendChild(openingHours);
+
+
 });
 
 

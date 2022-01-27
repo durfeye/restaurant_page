@@ -20,6 +20,7 @@ body {
 }
 .nav {
     height: 10vh;
+    width: 100%;
 }
 .menu {
     margin: 0;
@@ -29,8 +30,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    
     background: #FFB133;
 }
 button {
@@ -39,7 +38,7 @@ button {
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: bold;
 }
 .menuOption1::before {
@@ -52,7 +51,7 @@ button {
     content: 'Contact';
 }
 .topInfo {
-    height: 29.5vh;
+    height: 30%;
 }
 .topInfoHeading {
     display: flex;
@@ -73,7 +72,7 @@ button {
     font-size: 3vh;
 }
 .bottomInfo {
-    height: 45vh;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,9 +80,9 @@ button {
 }
 .chefPhoto {
     background: url('chef.jpg');
-    background-size: 40vh;
-    height: 40vh;
-    width: 40vh;
+    background-size: 35vh;
+    height: 35vh;
+    width: 35vh;
     border-radius: 100%;
 }
 .chefPhotoDesc {
@@ -187,3 +186,55 @@ footer {
 .menuItem4 .menuItemPrice::before {
     content: '25$'
 }
+.contactInfo {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+.openingHours {
+    height: 50%;
+    width: 100%;;
+    border: 0;
+}
+.contactItem {
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-size: 3vh;
+    font-weight: bold;
+}
+.contactItem1::after {
+    content: 'E-mail: aaa@aaa.aaa'
+}
+.contactItem2::before {
+    content: 'Phone nr: +00 000 00'
+}
+.contactItem3::after {
+    content: 'Vancourver St. 22'
+}
+@media only screen and (max-width: 600px) {
+    #content, footer {
+        width: 100%;
+    }
+    .menuItemBox {
+        width: 100%;
+    }
+    .topInfo {
+        height: 40%;
+    }
+    .bottomInfo {
+        height: 60%;
+    }
+    .topInfoContent {
+        font-size: 2.3vh;
+    }
+    .chefPhoto {
+        background-size: 28vh;
+        height: 28vh;
+        width: 28vh;
+    }
+  }
