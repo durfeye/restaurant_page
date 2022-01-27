@@ -20,7 +20,7 @@ body {
     height: 100%;
 }
 .frontContent {
-    max-height: 80vh;
+    max-height: 100vh;
 }
 .nav {
     height: 10vh;
